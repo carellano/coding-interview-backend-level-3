@@ -1,11 +1,11 @@
 
 services:
-  postgres-test:
+  postgres:
     image: postgres:17-alpine
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: test123456*
-      POSTGRES_DB: test-db
+      POSTGRES_DB: db
     ports:
       - "5432:5432"
     volumes:
@@ -16,5 +16,14 @@ services:
       timeout: 5s
       retries: 3
       start_period: 60s
+
+  backend-item:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgres://postgres:test123456*@postgres:5432/db
 volumes:
   pgdata17:
