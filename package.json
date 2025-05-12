@@ -4,19 +4,33 @@
   "description": "Coding Interview Backend Level 3",
   "main": "src/index.ts",
   "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "start:dev": "nodemon",
+    "reset:db": "prisma migrate reset --force",
+    "migrate": "prisma migrate dev",
+    "migrate:deploy": "prisma migrate deploy",
+    "test:unit": "jest",
     "test": "jest e2e"
   },
   "author": "El Dorado Dev Team",
   "license": "ISC",
   "devDependencies": {
-    "@swc/core": "^1.7.2",
+    "@swc/cli": "^0.7.5",
+    "@swc/core": "^1.11.24",
     "@swc/jest": "^0.2.36",
     "@types/jest": "^29.5.12",
     "jest": "^29.7.0",
     "mocha": "^10.7.0",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.7.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   },
   "dependencies": {
-    "@hapi/hapi": "^21.3.10"
+    "@hapi/hapi": "^21.3.10",
+    "@prisma/client": "^6.7.0",
+    "joi": "^17.13.3",
+    "pg": "^8.11.1"
   }
 }

@@ -41,3 +41,12 @@ Eres el Senior Developer de tu equipo en El Dorado, y te han dado la responsabil
 7. PROFIT
 
 ### Cualquier duda contactarme a https://www.linkedin.com/in/andreujuan/
+
+
+
+## Correr test
+
+``` shell
+./run_test.sh
+```
+este script, instala las dependencias, levanta el contenedor de Postgres, corre la migración necesaria y ejecuta el test 
